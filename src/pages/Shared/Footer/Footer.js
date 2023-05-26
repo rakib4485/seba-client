@@ -2,7 +2,8 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div className='text-white'>
+        <div className='text-white mt-20'>
+            <div className='h-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded'></div>
             <div className="mx-auto container py-16 xl:px-20 lg:px-12 sm:px-6 px-4">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 md:gap-8 gap-4">
                 <div className="flex flex-col flex-shrink-0">

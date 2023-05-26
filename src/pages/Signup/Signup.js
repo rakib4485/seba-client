@@ -1,11 +1,12 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
 import signUpImg from '../../assets/register.png'
+import { AuthContext } from '../../contexts/AuthProvider';
 
 const Signup = () => {
-    // const {createUser, updateUser, googleSignIn} = useContext(AuthContext);
-    // const navigate = useNavigate();
+    const {createUser, updateUser, googleSignIn} = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleCreateUser = (event) => {
         event.preventDefault();
@@ -19,45 +20,46 @@ const Signup = () => {
             displayName: name
         }
 
-        // createUser(email, password)
-        // .then(result => {
-        //     const user = result.user;
-        //     console.log(user);
-        //     updateUser(userInfo)
-        //     .then( () => {
-        //       saveUser(name, email)
-        //       navigate('/')
-        //     })
-        //     .then()
-        // })
-        // .then(err => console.error(err)) 
+        createUser(email, password)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+            updateUser(userInfo)
+            .then( () => {
+              
+              navigate('/')
+            })
+            .then()
+        })
+        .then(err => console.error(err)) 
     }
 
     const handleGoogleSignIn = () => {
-        // googleSignIn()
-        // .then(result => {
-        //     const user = result.user;
-        //     saveUser(user.displayName, user.email);
-        //     navigate('/');
-        // })
-        // .then(err => {
-        // })
-    }
+      googleSignIn()
+      .then(result => {
+          const user = result.user;
+          console.log(user);
+          navigate('/')
+      })
+      .catch(err => {
+          console.error(err);
+      })
+  }
 
-    const saveUser = (name, email) => {
-      const user = {name, email};
-      fetch('https://mybook-server.vercel.app/users', {
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json'
-        },
-        body: JSON.stringify(user)
-      })
-      .then(res => res.json())
-      .then(data => {
-        console.log(data);
-      })
-    }
+    // const saveUser = (name, email) => {
+    //   const user = {name, email};
+    //   fetch('https://mybook-server.vercel.app/users', {
+    //     method: 'POST',
+    //     headers: {
+    //       'content-type': 'application/json'
+    //     },
+    //     body: JSON.stringify(user)
+    //   })
+    //   .then(res => res.json())
+    //   .then(data => {
+    //     console.log(data);
+    //   })
+    // }
 
     return (
         <div className="hero min-h-screen">

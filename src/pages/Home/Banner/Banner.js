@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import Banner1 from '../../../assets/banner-1.jpg';
 import Banner2 from '../../../assets/banner-2.jpg';
 import Banner3 from '../../../assets/banner-3.jpg';
@@ -47,7 +47,8 @@ const Banner = () => {
                         }}
                         loop={true}
                         // effect={"fade"}
-                        modules={[Autoplay,EffectFade]}
+                        
+                        modules={[EffectFade, Autoplay]}
                         className="mySwiper"
                       >
                         
