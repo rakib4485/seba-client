@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FaGoogle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import loginImg from '../../assets/Login.png'
+import { AuthContext } from '../../contexts/AuthProvider';
 
 const Login = () => {
+  const {googleSignIn, signIn} = useContext(AuthContext);
     const navigate = useNavigate();
+
     const handleSignIn = event =>{
         event.preventDefault();
 
@@ -14,27 +17,27 @@ const Login = () => {
         const password = form.password.value;
 
         console.log(email, password);
-        // signIn(email, password)
-        // .then( result => {
-        //     const user = result.user;
-        //     console.log(user);
-        //     navigate('/')
-        // })
-        // .then(err => {
-        //     console.error(err);
-        // })
+        signIn(email, password)
+        .then( result => {
+            const user = result.user;
+            console.log(user);
+            navigate('/')
+        })
+        .then(err => {
+            console.error(err);
+        })
     }
 
     const handleGoogleSignIn = () => {
-        // googleSignIn()
-        // .then(result => {
-        //     const user = result.user;
-        //     saveUser(user.displayName, user.email);
-        //     navigate('/')
-        // })
-        // .catch(err => {
-        //     console.error(err);
-        // })
+        googleSignIn()
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+            navigate('/')
+        })
+        .catch(err => {
+            console.error(err);
+        })
     }
     return (
         <div className="hero min-h-screen">
