@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import 'swiper/css/effect-fade';
 import { Autoplay,EffectFade } from "swiper";
 import SingleBanner from "./SingleBanner";
 
@@ -46,7 +47,7 @@ const Banner = () => {
                           disableOnInteraction: false,
                         }}
                         loop={true}
-                        // effect={"fade"}
+                        effect={"fade"}
                         
                         modules={[EffectFade, Autoplay]}
                         className="mySwiper"
