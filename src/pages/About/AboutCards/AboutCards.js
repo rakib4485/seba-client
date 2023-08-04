@@ -3,7 +3,7 @@ import { HiBookmark, HiGlobeAlt, HiPhone } from "react-icons/hi";
 
 const AboutCards = () => {
     return (
-        <div className='grid gap-8 lg:grid-cols-3 mx-20'>
+        <div className='grid gap-8 lg:grid-cols-3 mx-20 mt-10'>
             <div className='bg-red-200 py-10 px-5 text-center rounded-md'>
                 <HiPhone className='text-4xl w-2/3 mx-auto text-cyan-500'/>
                 <h1 className='text-3xl font-bold my-3 text-pink-400'>১,৮২০+</h1>
