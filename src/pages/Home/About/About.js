@@ -7,7 +7,9 @@ import { Link } from 'react-router-dom';
 const About = () => {
     return (
         <div className='my-20'>
-            <div className='grid grid-cols-2 gap-6'>
+
+
+            {/* <div className='grid grid-cols-2 gap-6'>
                 <div>
                     <h1 className="text-4xl font-semibold text-white">Welcome to my Practice</h1>
                     <p className='my-2 text-justify'>As a psychologist and a cognitive behavioral therapist I have worked with hundreds of patients and understand the intricacies of various psychological issues that people face.</p>
@@ -37,7 +39,7 @@ const About = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 };
