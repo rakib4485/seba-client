@@ -16,7 +16,7 @@ const Navbar = () => {
       <li><Link to="/">Home</Link></li>   
       <li><Link to='/about'>About</Link></li>
       <li><Link to='/contact'>Contact</Link></li>
-      <li>
+      {/* <li>
         {
           user?.uid? 
           <>
@@ -25,7 +25,7 @@ const Navbar = () => {
           </>:
           <Link to="/login">Login</Link>
         }
-      </li>
+      </li> */}
     </React.Fragment>
 
     return (
@@ -39,15 +39,22 @@ const Navbar = () => {
         {menuItems}
       </ul>
     </div>
-    <Link className="btn btn-ghost normal-case text-xl">Psychology Buzz</Link>
+    <Link className=" normal-case font-semibold text-3xl title ml-2">Psychology Buzz</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
       {menuItems}
     </ul>
   </div>
-  <div className="navbar-end">
-    <Link className="btn">Get started</Link>
+  <div className="navbar-end mr-2">
+  {
+          user?.uid? 
+          <>
+          <p>{user?.displayName}</p>
+          <button onClick={handleLogout} className="btn btn-active btn-ghost rounded-md">Log Out</button>
+          </>:
+          <Link className='bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 px-10 rounded-md font-semibold' to="/login">Login</Link>
+        }
   </div>
 </div>
     );
