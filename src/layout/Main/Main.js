@@ -5,7 +5,7 @@ import Footer from '../../pages/Shared/Footer/Footer';
 
 const Main = () => {
     return (
-        <div className='px-[10%]'>
+        <div className=''>
             <Navbar />
             <Outlet />
             <Footer />

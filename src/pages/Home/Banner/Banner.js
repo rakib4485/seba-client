@@ -18,20 +18,20 @@ const Banner = () => {
             {
                 id: 1, 
                 img: Banner1,
-                title: "Mental illness is no myth.",
-                author: "- Nelson Mandela"
+                title: "মানসিক রোগ কোন মিথ নয়।",
+                author: "- নেলসন ম্যান্ডেলা"
             },
             {
                 id: 2, 
                 img: Banner2,
-                title: "Life is too short to wait",
-                author: "- Unknown Girl"
+                title: "অপেক্ষা করার জন্য জীবন অনেক ছোট",
+                author: "- অচেনা মেয়ে"
             },
             {
                 id: 3, 
                 img: Banner3,
-                title: "Be smart, help yourself now.",
-                author: "- Mahatma Gandhi"
+                title: "স্মার্ট হোন, এখনই নিজেকে সাহায্য করুন।",
+                author: "- মহাত্মা গান্ধী"
             }
         ]
     
