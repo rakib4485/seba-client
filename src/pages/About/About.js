@@ -6,7 +6,7 @@ import AboutBanner from './AboutBanner/AboutBanner';
 
 const About = () => {
     return (
-        <div className='my-20'>
+        <div className=''>
             <AboutBanner/>
             <AboutCards/>
             <WelcomeText/>
