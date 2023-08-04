@@ -1,19 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ServiceCard = ({service}) => {
-    const {img , title, description } = service;
-    return (
-        <div className="bg-base-100 shadow-xl rounded-md">
-  <figure><img src={img} alt="" /></figure>
-  <div className="card-body">
-    <h2 className="card-title text-white hover:text-cyan-500 duration-300 cursor-pointer">{title}</h2>
-    <p>{description}</p>
-    <p className='hover:text-orange-600'><Link>Read More</Link></p>
-    
-  </div>
-</div>
-    );
+const ServiceCard = ({ service }) => {
+  const { img, title, description } = service;
+  return (
+    <div className="relative mb-32">
+      <figure><img src={img} alt="" className=''/></figure>
+      <div className="bg-[#F4F3F2] p-5 w-[80%] absolute -bottom-28 text-center">
+        <h2 className="text-[#6C6C6C] text-lg">{title}</h2>
+        <p className='text-xl font-semibold my-2'>{description}</p>
+        <p className='text-[#906555] border-2 border-[#F4F3F2] border-b-[#906555] p-2 hover:text-white hover:bg-[#906555] hover:border-[#906555] w-[120px] mx-auto duration-500 '><Link>আরও পড়ুন</Link></p>
+
+      </div>
+    </div>
+  );
 };
 
 export default ServiceCard;

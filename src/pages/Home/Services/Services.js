@@ -10,31 +10,53 @@ const Services = () => {
         {
             id: 1, 
             img: cupule,
-            title: "Couples Therapy",
-            description: "A relationship goes through numerous phases during its life cycle, and it is obvious for it to have a few rough patches. However, the strength of a relationship is reflected in how the couples deal with those ..."
+            title: "গ্রুপ, থেরাপি",
+            description: "উদ্বেগ চিকিৎসা"
 
         },
         
         {
             id: 2, 
             img: postDivorce,
-            title: "Post-divorce Recovery",
-            description: "Our systematic approach towards couple therapy is defined on the lines of enhancing the communication between the partners, and establishing short term and long term goals, where both the partners would be..."
+            title: "পরিবার",
+            description: "দম্পতি থেরাপি"
 
         },
         {
             id: 3, 
             img: children,
-            title: "Therapy for Children",
-            description: "There are many emotional issues that find a corner in our heart, and refuse to die down. With time, these issues can transform into a sort of emotional tumor that impacts negatively on our daily life, such as lack of..."
+            title: "পরিবার",
+            description: "পারিবারিক চর্চা"
+
+        },
+        {
+            id: 4, 
+            img: children,
+            title: "ব্যক্তিগত, থেরাপি",
+            description: "বিষন্নতা থেরাপি"
+
+        },
+        {
+            id: 5, 
+            img: children,
+            title: "গ্রুপ, থেরাপি",
+            description: "গ্রুপ, থেরাপি"
+
+        },
+        {
+            id: 6, 
+            img: children,
+            title: "ব্যক্তি, কোচিং",
+            description: "ব্যক্তি, কোচিং"
 
         },
 
     ]
 
     return (
-        <div>
-            <h1 className="text-4xl font-semibold mx-auto text-center bg-blue-500 py-3 w-[250px] text-white rounded-lg">Our Services</h1>
+        <div className='px-[6%]'>
+            <h1 className="text-3xl font-bold mx-auto text-center  py-3 md:w-[50%] rounded-lg">সুস্থ থাকুন, <br /> বিশেষজ্ঞের পরামর্শ সহ</h1>
+            <p className="text-center text-lg">সাইকোলজি বাজ অত্যন্ত যাচাইকৃত এবং প্রত্যয়িত অনুশীলনকারী মনোবিজ্ঞানী</p>
 
             <div className="grid grid-cols-3 gap-6 mt-20">
                 {
