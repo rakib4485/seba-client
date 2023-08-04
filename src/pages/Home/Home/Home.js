@@ -1,15 +1,15 @@
 import React from 'react';
 import Banner from '../Banner/Banner';
-import About from '../About/About';
 import Services from '../Services/Services';
 import FAQ from '../FAQ/FAQ';
 import Council from '../Council/Council';
+import AboutHome from '../About/AboutHome';
 
 const Home = () => {
     return (
         <div>
             <Banner />
-            <About />
+            <AboutHome />
             <Services />
             <FAQ />
             <Council />

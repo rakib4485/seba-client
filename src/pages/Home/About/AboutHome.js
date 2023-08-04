@@ -4,7 +4,7 @@ import React from 'react';
 // import about3 from '../../../assets/home-about-3.jpg';
 import { Link } from 'react-router-dom';
 
-const About = () => {
+const AboutHome = () => {
     return (
         <div className='my-20 px-[6%]'>
 
@@ -45,4 +45,4 @@ const About = () => {
     );
 };
 
-export default About;
+export default AboutHome;
