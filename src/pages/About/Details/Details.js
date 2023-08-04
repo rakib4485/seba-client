@@ -1,13 +1,9 @@
 import React from 'react';
-// import about1 from '../../../assets/home-about-1.jpg';
-// import about2 from '../../../assets/home-about-2.jpg';
-// import about3 from '../../../assets/home-about-3.jpg';
 import { Link } from 'react-router-dom';
 
-const About = () => {
+const Details = () => {
     return (
-        <div className='my-20 px-[6%]'>
-
+        <div className='mx-20'>
             <div>
                 <h1 className="text-center text-3xl font-bold w-[50%] mx-auto">
                 প্রতিটি যাত্রা প্রথম ধাপ দিয়ে শুরু হয়, তাই আপনি শুধু আপনাকে তৈরি করেন।
@@ -45,4 +41,4 @@ const About = () => {
     );
 };
 
-export default About;
+export default Details;
