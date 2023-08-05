@@ -44,10 +44,10 @@ const Login = () => {
         <div className="hero-content flex-col lg:flex-row-reverse justify-around">
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form onSubmit={handleSignIn} className="card-body">
-            <h1 className="text-5xl font-bold">Login now!</h1>
+            <h1 className="text-3xl font-bold">লগ ইন করুন!</h1>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Email</span>
+                  <span className="label-text font-semibold">ইমেল</span>
                 </label>
                 <input
                   type="email"
@@ -57,7 +57,7 @@ const Login = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Password</span>
+                  <span className="label-text font-semibold">পাসওয়ার্ড</span>
                 </label>
                 <input
                   type="password"
@@ -66,20 +66,21 @@ const Login = () => {
                 />
                 <label className="label">
                   <Link  className="label-text-alt link link-hover">
-                    Forgot password?
+                  পাসওয়ার্ড ভুলে গেছেন?
                   </Link>
                 </label>
                
               </div>
               <div className="form-control mt-3">
-                <button className="btn btn-primary">Login</button>
+                <button className="btn btn-primary">লগ ইন</button>
               </div>
-              
+          
             </form>
-            <p className="ml-5">Don't have an account? Please<Link to="/signup" className="text-primary"> Sign Up</Link></p>
-              <div className="divider">OR</div>
+            <p className="ml-5">একটি অ্যাকাউন্ট নেই? অনুগ্রহ করে<Link to="/signup" className="text-primary"> সাইন আপ করুন</Link></p>
+              <div className="divider">অথবা</div>
               <div className="form-control mb-6 w-[80%] mx-auto">
-                <button onClick={handleGoogleSignIn} className="btn btn-success text-white flex items-center"><FaGoogle className="mr-2"></FaGoogle> Google Sing in</button>
+                <button onClick={handleGoogleSignIn} className="btn btn-success text-white flex items-center"><FaGoogle className="mr-2"></FaGoogle> গুগোল
+                 সাইন ইন</button>
               </div>
           </div>
           <div className="text-center lg:text-left lg:w-1/2">
