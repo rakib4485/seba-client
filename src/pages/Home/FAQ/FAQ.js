@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const FAQ = () => {
     return (
         <div className='px-[6%]'>
-            <h1 className="text-center text-3xl font-bold my-20">সচরাচর জিজ্ঞাসা</h1>
+            <h1 className="text-center text-3xl font-bold mt-20">সচরাচর জিজ্ঞাসা</h1>
             {/* <div className="grid grid-cols-3 gap-8 mt-16">
                 <div>
                     <h5 className="text-xl font-semibold">আমি যখন একজন থেরাপিস্টকে দেখি তখন প্রথম সেশনে আমি কী আশা করতে পারি?</h5>
@@ -22,7 +22,7 @@ const FAQ = () => {
                     <p className='uppercase text-orange-500'><Link>Read more</Link></p>
                 </div>
             </div> */}
-            <div className="collapse collapse-plus w-[70%] mx-auto">
+            <div className="collapse collapse-plus w-[70%] mx-auto mt-10">
   <input type="radio" name="my-accordion-3" checked="checked" /> 
   <div className="collapse-title text-xl font-semibold bg-orange-300">
   আমি যখন একজন থেরাপিস্টকে দেখি তখন প্রথম সেশনে আমি কী আশা করতে পারি?

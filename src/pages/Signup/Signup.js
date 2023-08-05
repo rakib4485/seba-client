@@ -66,10 +66,10 @@ const Signup = () => {
         <div className="hero-content flex-col lg:flex-row-reverse justify-around">
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form onSubmit={handleCreateUser} className="card-body">
-            <h1 className="text-4xl font-bold">Sign UP Now!</h1>
+            <h1 className="text-3xl font-bold">সাইন আপ করুন!</h1>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Name</span>
+                  <span className="label-text font-semibold">নাম</span>
                 </label>
                 <input
                   type="text"
@@ -79,7 +79,7 @@ const Signup = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Email</span>
+                  <span className="label-text font-semibold">ইমেল</span>
                 </label>
                 <input
                   type="email"
@@ -89,7 +89,7 @@ const Signup = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Password</span>
+                  <span className="label-text font-semibold">পাসওয়ার্ড</span>
                 </label>
                 <input
                   type="password"
@@ -98,12 +98,12 @@ const Signup = () => {
                 /> 
               </div>
               <div className="form-control mt-3">
-                <button className="btn btn-primary">Sign Up</button>
+                <button className="btn btn-primary">সাইন আপ করুন</button>
               </div>
-              <p className="">Already have an account? Please<Link to="/login" className="text-primary"> Log In</Link></p>
-              <div className="divider">OR</div>
+              <p className="">ইতিমধ্যে একটি অ্যাকাউন্ট আছে? অনুগ্রহ করে<Link to="/login" className="text-primary"> লগ ইন করুন</Link></p>
+              <div className="divider">অথবা</div>
               <div className="form-control">
-                <button onClick={handleGoogleSignIn} className="btn btn-success text-white flex items-center"><FaGoogle className='mr-2'></FaGoogle> Google Sing in</button>
+                <button onClick={handleGoogleSignIn} className="btn btn-success text-white flex items-center"><FaGoogle className='mr-2'></FaGoogle> গুগোল সাইন ইন</button>
               </div>
             </form>
           </div>
