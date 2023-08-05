@@ -1,16 +1,16 @@
 import React from 'react';
 import AboutCards from './AboutCards/AboutCards';
 import WelcomeText from './WelcomeText/WelcomeText';
-import Details from './Details/Details';
 import AboutBanner from './AboutBanner/AboutBanner';
+import AboutHome from '../Home/AboutHome/AboutHome';
 
 const About = () => {
     return (
-        <div className='my-20'>
+        <div className=''>
             <AboutBanner/>
             <AboutCards/>
             <WelcomeText/>
-            <Details/>
+            <AboutHome/>
         </div>
     );
 };
