@@ -48,13 +48,8 @@ export const router = createBrowserRouter([
                 element: <Contact />
             },
             {
-<<<<<<< HEAD
                 path: '/appointment',
                 element: <Appointment/>
-=======
-                path: "/posts",
-                element: <PrivateRoutes><Posts /></PrivateRoutes>
->>>>>>> 3afa60bddf771a632ebef87d6b22c7f3d66f2c5e
             },
             {
                 path: "/login",
