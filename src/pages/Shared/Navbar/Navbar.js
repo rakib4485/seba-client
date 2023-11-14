@@ -13,11 +13,11 @@ const Navbar = () => {
     .then(()=>{})
   }
     const menuItems = <React.Fragment>
-      <li className='font-semibold'><Link to="/">Home</Link></li>   
-      <li className='font-semibold'><Link to='/about'>About</Link></li>
-      <li className='font-semibold'><Link to='/blog'>Blog</Link></li>
-      <li className='font-semibold'><Link to='/contact'>Contact</Link></li>
-      <li className='font-semibold'><Link to='/posts'>Posts</Link></li>
+      <li><Link to="/">Home</Link></li>  
+      <li><Link to='/meditation'>Meditation</Link></li> 
+      <li><Link to='/about'>About</Link></li>
+      <li><Link to='/appointment'>Appointment</Link></li>
+      <li><Link to='/contact'>Contact</Link></li>
       {/* <li>
         {
           user?.uid? 
