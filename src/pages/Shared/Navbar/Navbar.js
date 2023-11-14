@@ -53,7 +53,7 @@ const Navbar = () => {
           user?.uid? 
           <>
           <p>{user?.displayName}</p>
-          <button onClick={handleLogout} className="btn btn-active btn-ghost rounded-md">Log Out</button>
+          <button onClick={handleLogout} className="btn btn-active btn-ghost rounded-md ml-3">Log Out</button>
           </>:
           <Link className='bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 px-10 rounded-md font-semibold' to="/login">Login</Link>
         }
