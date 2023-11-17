@@ -7,6 +7,9 @@ import About from "../pages/About/About";
 import Contact from "../pages/Contact/Contact";
 import Meditation from "../pages/Meditation/Meditation";
 import Appointment from "../pages/Appointment/Appointment";
+import PrivateRoutes from "./PrivateRoutes";
+import BlogDetails from "../pages/Blog/BlogDetails/BlogDetails";
+import Blog from "../pages/Blog/Blog/Blog";
 
 export const router = createBrowserRouter([
     {
