@@ -9,19 +9,16 @@ const Council = () => {
                     <figure className="px-5 py-5">
                     <video controls src="https://res.cloudinary.com/dmfktgrnl/video/upload/v1700320873/pdlwkygzbe_dcfdse.mp4"></video>
                     </figure>
-
                 </div>
                 <div className="card">
                     <figure className="px-5 py-5">
                     <video controls src="https://res.cloudinary.com/dmfktgrnl/video/upload/v1700320133/durakezptx_ozaegq.mp4"></video>
                     </figure>
-
                 </div>
                 <div className="card">
                     <figure className="px-5 py-5">
                     <video controls src="https://res.cloudinary.com/dmfktgrnl/video/upload/v1700321376/yjqapbtsht_ami9yv.mp4"></video>
                     </figure>
-
                 </div>
             </div>
         </div>
