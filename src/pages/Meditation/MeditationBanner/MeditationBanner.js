@@ -10,7 +10,7 @@ const MeditationBanner = () => {
                 <Link className='bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% p-3 rounded text-white font-semibold' to='/signup'>সাইন আপ করুন</Link>
             </div>
             <div>
-                <img className='rounded-2xl' src="https://i.ibb.co/4jnzcjg/photo-2023-11-17-17-45-25.jpg" alt="" />
+                <img className='rounded-2xl' src="https://i.ibb.co/2s48QKL/photo-2023-11-18-23-43-17.jpg" alt="" />
             </div>
         </div>
     );
