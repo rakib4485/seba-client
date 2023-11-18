@@ -47,7 +47,7 @@ const AddDoctor = () => {
                           ]
                     }
 
-                    fetch('http://localhost:5000/appointments', {
+                    fetch('https://phychobuzz.vercel.app/appointments', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
