@@ -29,7 +29,7 @@ const ManageDoctor = () => {
     })
 
     const handleDeleteDoctor = doctor => {
-        fetch(`http://localhost:5000/appointments/${doctor._id}`, {
+        fetch(`http://localhost:5000/doctors/${doctor._id}`, {
             method: 'DELETE', 
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -37,6 +37,7 @@ const ManageDoctor = () => {
         })
         .then(res => res.json())
         .then(data => {
+            console.log(data);
             if(data.deletedCount > 0){
                 refetch();
                 toast.success(`Doctor ${doctor.name} deleted successfully`)
