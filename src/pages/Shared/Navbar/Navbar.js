@@ -19,15 +19,6 @@ const Navbar = () => {
     <li><Link to='/about'>About</Link></li>
     <li><Link to='/appointment'>Appointment</Link></li>
     <li><Link to='/contact'>Contact</Link></li>
-    {/* <li>
-      {
-        user?.uid ?
-          <>
-            <li><Link to="/dashboard">Dashboard</Link></li>
-          </> :
-          <></>
-      }
-    </li> */}
   </React.Fragment>
 
   return (
@@ -70,7 +61,7 @@ const Navbar = () => {
                     )
                 }
               </label>
-              <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box -ml-24 w-44">
+              <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box -ml-24 w-44 z-50">
                 <li>
                   <Link to="/dashboard" className='text-black'>My Dashboard</Link>
                 </li>
