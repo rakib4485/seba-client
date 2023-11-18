@@ -16,6 +16,7 @@ import MyAppointment from "../pages/Dashobard/MyAppointment/MyAppointment";
 import AllUsers from "../pages/Dashobard/AllUsers/AllUsers";
 import AddDoctor from "../pages/Dashobard/AddDoctor/AddDoctor";
 import ManageDoctor from "../pages/Dashobard/ManageDoctor/ManageDoctor";
+import ServiceDetails from "../pages/Home/Services/ServiceDetails";
 
 export const router = createBrowserRouter([
     {
@@ -34,12 +35,12 @@ export const router = createBrowserRouter([
                 path: "/about",
                 element: <About />
             },
+            // {
+            //     path: "/blog",
+            //     element: <Blog />
+            // },
             {
-                path: "/blog",
-                element: <Blog />
-            },
-            {
-                path: "/blog/:id",
+                path: "/blogs/:id",
                 element: <PrivateRoutes><BlogDetails/></PrivateRoutes>,
                 loader: ({params}) =>{
                     return fetch(`https://phychobuzz-server.vercel.app/blogs/${params.id}`)

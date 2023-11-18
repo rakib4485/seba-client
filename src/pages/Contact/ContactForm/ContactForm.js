@@ -25,14 +25,14 @@ const ContactForm = () => {
         <div>
         <div className="bg-gradient-to-r from-blue-500 to-purple-500 p-8 h-screen flex justify-center items-center">
       <div className="bg-white p-8 rounded-lg shadow-lg w-96">
-        <h2 className="text-3xl font-semibold mb-4 text-center">Contact Us</h2>
+        <h2 className="text-3xl font-semibold mb-4 text-center">যোগাযোগ করুন</h2>
         <p className="text-gray-600 mb-6 text-center">
-          We'd love to hear from you! Fill out the form below or connect with us on social media.
+        নীচের ফর্মটি পূরণ করুন বা সোশ্যাল মিডিয়াতে আমাদের সাথে সংযোগ করুন।
         </p>
         <form>
           <div className="mb-4">
             <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-              Name
+            নাম
             </label>
             <input
               type="text"
@@ -44,7 +44,7 @@ const ContactForm = () => {
           </div>
           <div className="mb-4">
             <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-              Email
+            ইমেইল
             </label>
             <input
               type="email"
@@ -56,7 +56,7 @@ const ContactForm = () => {
           </div>
           <div className="mb-4">
             <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-              Message
+            বার্তা
             </label>
             <textarea
               id="message"
@@ -70,7 +70,7 @@ const ContactForm = () => {
               type="submit"
               className="px-4 py-2 rounded-md text-white font-semibold bg-primary hover:bg-opacity-80 focus:outline-none focus:ring focus:ring-opacity-50 focus:ring-primary"
             >
-              Send
+              পাঠান
             </button>
             <div className="flex space-x-2">
               <a href="https://twitter.com/" className="text-blue-500 hover:text-blue-600">
