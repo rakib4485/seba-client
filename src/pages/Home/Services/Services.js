@@ -1,7 +1,4 @@
 import React from 'react';
-import cupule from '../../../assets/cuppole.jpg';
-import postDivorce from '../../../assets/post-divorce.jpg';
-import children from '../../../assets/children.jpg';
 import ServiceCard from './ServiceCard';
 import { useQuery } from '@tanstack/react-query';
 
@@ -15,52 +12,7 @@ const Services = () => {
         }
     })
 
-    // const services = [
-    //     {
-    //         id: 1, 
-    //         img: cupule,
-    //         title: "গ্রুপ, থেরাপি",
-    //         description: "উদ্বেগ চিকিৎসা"
-
-    //     },
-        
-    //     {
-    //         id: 2, 
-    //         img: postDivorce,
-    //         title: "পরিবার",
-    //         description: "দম্পতি থেরাপি"
-
-    //     },
-    //     {
-    //         id: 3, 
-    //         img: children,
-    //         title: "পরিবার",
-    //         description: "পারিবারিক চর্চা"
-
-    //     },
-    //     {
-    //         id: 4, 
-    //         img: children,
-    //         title: "ব্যক্তিগত, থেরাপি",
-    //         description: "বিষন্নতা থেরাপি"
-
-    //     },
-    //     {
-    //         id: 5, 
-    //         img: children,
-    //         title: "গ্রুপ, থেরাপি",
-    //         description: "গ্রুপ, থেরাপি"
-
-    //     },
-    //     {
-    //         id: 6, 
-    //         img: children,
-    //         title: "ব্যক্তি, কোচিং",
-    //         description: "ব্যক্তি, কোচিং"
-
-    //     },
-
-    // ]
+    
 
     return (
         <div className='px-[6%]'>
