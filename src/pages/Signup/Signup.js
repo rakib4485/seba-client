@@ -1,11 +1,15 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
 import signUpImg from '../../assets/register.png'
 import { AuthContext } from '../../contexts/AuthProvider';
+import toast from 'react-hot-toast';
+import useToken from '../../hooks/useToken';
 
 const Signup = () => {
     const {createUser, updateUser, googleSignIn} = useContext(AuthContext);
+    const [createdUserEmail, setCreatedUserEmail] = useState('');
+    const [token] = useToken(createdUserEmail);
     const navigate = useNavigate();
 
     const handleCreateUser = (event) => {
@@ -26,8 +30,7 @@ const Signup = () => {
             console.log(user);
             updateUser(userInfo)
             .then( () => {
-              
-              navigate('/')
+              saveUser(name, email)
             })
             .then()
         })
@@ -39,6 +42,7 @@ const Signup = () => {
       .then(result => {
           const user = result.user;
           console.log(user);
+          toast("User Created Successfully")
           navigate('/')
       })
       .catch(err => {
@@ -46,20 +50,22 @@ const Signup = () => {
       })
   }
 
-    // const saveUser = (name, email) => {
-    //   const user = {name, email};
-    //   fetch('https://mybook-server.vercel.app/users', {
-    //     method: 'POST',
-    //     headers: {
-    //       'content-type': 'application/json'
-    //     },
-    //     body: JSON.stringify(user)
-    //   })
-    //   .then(res => res.json())
-    //   .then(data => {
-    //     console.log(data);
-    //   })
-    // }
+  const saveUser = (name, email) => {
+    const user = { name, email };
+    fetch('http://localhost:5000/users', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        
+      },
+      body: JSON.stringify(user)
+    })
+      .then(res => res.json())
+      .then(data => {
+        setCreatedUserEmail(email);
+        navigate('/')
+      })
+  }
 
     return (
         <div className="hero min-h-screen">

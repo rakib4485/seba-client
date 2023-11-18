@@ -18,16 +18,17 @@ const Navbar = () => {
       <li><Link to='/about'>About</Link></li>
       <li><Link to='/appointment'>Appointment</Link></li>
       <li><Link to='/contact'>Contact</Link></li>
-      {/* <li>
+      <li>
         {
           user?.uid? 
           <>
-          <p>{user?.displayName}</p>
+          <li><Link to="/dashboard">Dashboard</Link></li>
+          {/* <p>{user?.displayName}</p> */}
           <button onClick={handleLogout} className="btn btn-active btn-ghost rounded-md">Log Out</button>
           </>:
           <Link to="/login">Login</Link>
         }
-      </li> */}
+      </li>
     </React.Fragment>
 
     return (
