@@ -13,6 +13,7 @@ const BlogCards = () => {
             return data;
         }
     });
+    
 
     if(isLoading){
         return <Loader/>

@@ -26,8 +26,8 @@ const MyAppointment = () => {
         return <Loading />
     }
     return (
-        <div>
-            <h1>My Appointment</h1>
+        <div className='mt-5 ml-5'>
+            <h1 className='text-4xl font-semibold underline'>My Appointment</h1>
             <div>
                 <div className="overflow-x-auto">
                     <table className="table">
@@ -42,7 +42,7 @@ const MyAppointment = () => {
                         </thead>
                         <tbody>
                             {
-                                bookings.map((booking, i) => <tr key={booking._id}>
+                                bookings.map((booking, i) => <tr key={booking._id} className='hover'>
                                     <th>{i + 1}</th>
                                     <td>{booking.patient}</td>
                                     <td>{booking.treatment}</td>

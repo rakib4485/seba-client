@@ -42,6 +42,7 @@ const Signup = () => {
       .then(result => {
           const user = result.user;
           console.log(user);
+          saveUser(user.displayName, user.email)
           toast("User Created Successfully")
           navigate('/')
       })
