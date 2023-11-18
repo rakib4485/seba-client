@@ -1,13 +1,21 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { FaGoogle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import loginImg from '../../assets/Login.png'
 import { AuthContext } from '../../contexts/AuthProvider';
+import useToken from '../../hooks/useToken';
 
 const Login = () => {
   const {googleSignIn, signIn} = useContext(AuthContext);
+  const [loginUserEmail, setLoginUserEmail] = useState("");
+  const [token] = useToken(loginUserEmail);
+  const location = useLocation();
     const navigate = useNavigate();
+
+    if(token){
+      navigate('/')
+    }
 
     const handleSignIn = event =>{
         event.preventDefault();
@@ -21,7 +29,7 @@ const Login = () => {
         .then( result => {
             const user = result.user;
             console.log(user);
-            navigate('/')
+            setLoginUserEmail(email);
         })
         .then(err => {
             console.error(err);
@@ -33,6 +41,7 @@ const Login = () => {
         .then(result => {
             const user = result.user;
             console.log(user);
+            setLoginUserEmail(user.email);
             navigate('/')
         })
         .catch(err => {
