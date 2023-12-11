@@ -1,7 +1,6 @@
 import React from 'react';
-import { useLoaderData, useNavigate, useParams } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import banner from '../../../assets/pattern.png'
-import { useQuery } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
 
 const Payment = () => {
