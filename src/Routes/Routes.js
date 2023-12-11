@@ -20,6 +20,7 @@ import ServiceDetails from "../pages/Home/Services/ServiceDetails";
 import Posts from "../pages/Posts/Posts/Posts";
 import Payment from "../pages/Dashobard/Payment/Payment";
 import AllBookings from "../pages/Dashobard/AllBookings/AllBookings";
+import MyBookings from "../pages/Dashobard/MyBookings/MyBookings";
 
 export const router = createBrowserRouter([
     {
@@ -82,6 +83,10 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard/allusers',
                 element: <AllUsers/>
+            },
+            {
+                path: '/dashboard/myBookings',
+                element: <MyBookings/>
             },
             {
                 path: '/dashboard/allBookings',

@@ -37,7 +37,8 @@ const AllBookings = () => {
     }
     return (
         <div className='mt-5 ml-5'>
-            <h1 className='text-4xl font-semibold underline'>All Appointments</h1>
+            <h1 className='text-4xl font-semibold'>All Appointments</h1>
+            <div className="bg-gradient-to-r from-cyan-500 to-blue-500 py-[2px] rounded-lg mb-3 w-36"></div>
             <div>
                 <div className="overflow-x-auto">
                     <table className="table">
