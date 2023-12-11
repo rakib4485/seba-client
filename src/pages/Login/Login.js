@@ -9,13 +9,11 @@ import useToken from '../../hooks/useToken';
 const Login = () => {
   const {googleSignIn, signIn} = useContext(AuthContext);
   const [loginUserEmail, setLoginUserEmail] = useState("");
-  const [token] = useToken(loginUserEmail);
+  // const [token] = useToken(loginUserEmail);
   const location = useLocation();
     const navigate = useNavigate();
 
-    if(token){
-      navigate('/')
-    }
+    const from = location.state?.from?.pathname || "/";
 
     const handleSignIn = event =>{
         event.preventDefault();
@@ -30,6 +28,7 @@ const Login = () => {
             const user = result.user;
             console.log(user);
             setLoginUserEmail(email);
+            navigate(from, {replace: true})
         })
         .then(err => {
             console.error(err);
@@ -42,7 +41,7 @@ const Login = () => {
             const user = result.user;
             console.log(user);
             setLoginUserEmail(user.email);
-            navigate('/')
+            navigate(from, {replace: true})
         })
         .catch(err => {
             console.error(err);

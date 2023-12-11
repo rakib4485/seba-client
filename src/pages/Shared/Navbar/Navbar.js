@@ -18,6 +18,7 @@ const Navbar = () => {
     <li><Link to='/meditation'>Meditation</Link></li>
     <li><Link to='/about'>About</Link></li>
     <li><Link to='/appointment'>Appointment</Link></li>
+    <li><Link to='/post'>Post</Link></li>
     <li><Link to='/contact'>Contact</Link></li>
   </React.Fragment>
 

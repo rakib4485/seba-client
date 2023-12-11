@@ -1,44 +1,55 @@
-import React, { useContext } from 'react';
-import Loading from '../../Shared/Loading/Loading';
-import { AuthContext } from '../../../contexts/AuthProvider';
 import { useQuery } from '@tanstack/react-query';
+import React from 'react';
+import Loader from '../../../components/Loader/Loader';
 import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
-const MyAppointment = () => {
-    const { user } = useContext(AuthContext);
-
-    const url = `http://localhost:5000/bookings?email=${user?.email}`;
-
-    const { data: bookings = [], isLoading } = useQuery({
-        queryKey: ['bookings', user?.email],
+const AllBookings = () => {
+    const {data: bookings = [], isLoading, refetch} = useQuery({
+        queryKey: ['booking'],
         queryFn: async () => {
-            const res = await fetch(url, {
-                headers: {
-                    authorization: `bearer ${localStorage.getItem('accessToken')}`
-                }
-            });
+            const res = await fetch('http://localhost:5000/allBookings');
             const data = await res.json();
             return data;
         }
     })
 
-    if (isLoading) {
-        return <Loading />
+    const handlePayment = (id) => {
+
+        fetch(`http://localhost:5000/bookings/payment/confirm?id=${id}`, {
+            method: 'PUT',
+            headers: {
+                "content-type": "application/json",
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    toast.success('Made admin successfully');
+                    refetch();
+                }
+            })
+    }
+
+    if(isLoading){
+        return <Loader />
     }
     return (
         <div className='mt-5 ml-5'>
-            <h1 className='text-4xl font-semibold underline'>My Appointment</h1>
+            <h1 className='text-4xl font-semibold underline'>All Appointments</h1>
             <div>
                 <div className="overflow-x-auto">
                     <table className="table">
                         <thead>
                             <tr>
                                 <th></th>
-                                <th>Name</th>
+                                <th>Patient Name</th>
                                 <th>Doctor Name</th>
                                 <th>Date</th>
                                 <th>Time</th>
                                 <th>Payment</th>
+                                <th>Confirm</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -49,14 +60,10 @@ const MyAppointment = () => {
                                     <td>{booking.treatment}</td>
                                     <td>{booking.appointmentDate}</td>
                                     <td>{booking.slot}</td>
+                                    <td>{booking?.paid === 'true' ? <span className="text-primary">Paid</span> : booking.paid}</td>
                                     <td>
-                                    {booking.price && booking.paid !== 'true' && booking.paid === 'false' && (
-                                        <Link to={`/dashboard/payment/${booking._id}`}>
-                                            <button className="btn btn-primary btn-sm">Pay</button>
-                                        </Link>
-                                    )}
-                                    {booking.price && booking.paid !== 'true' && booking.paid !== 'false' && (
-                                        <span className="text-primary">Pending</span>
+                                    {booking.price && booking.paid !== 'true' && (
+                                        <button className="btn btn-primary btn-sm" onClick={()=>handlePayment(booking._id)}>Confirm</button>    
                                     )}
                                     {booking.price && booking.paid === 'true' && (
                                         <span className="text-primary">Paid</span>
@@ -72,4 +79,4 @@ const MyAppointment = () => {
     );
 };
 
-export default MyAppointment;
+export default AllBookings;

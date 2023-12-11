@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
 import signUpImg from '../../assets/register.png'
 import { AuthContext } from '../../contexts/AuthProvider';
@@ -11,6 +11,9 @@ const Signup = () => {
     const [createdUserEmail, setCreatedUserEmail] = useState('');
     const [token] = useToken(createdUserEmail);
     const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || "/";
 
     const handleCreateUser = (event) => {
         event.preventDefault();
@@ -52,8 +55,8 @@ const Signup = () => {
   }
 
   const saveUser = (name, email) => {
-    const user = { name, email };
-    fetch('https://phychobuzz.vercel.app/users', {
+    const user = { name, email, role: 'user' };
+    fetch('http://localhost:5000/users', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -64,7 +67,7 @@ const Signup = () => {
       .then(res => res.json())
       .then(data => {
         setCreatedUserEmail(email);
-        navigate('/')
+        navigate(from, {replace: true})
       })
   }
 

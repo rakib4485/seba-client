@@ -25,7 +25,7 @@ const PostModal = ({setOpenModal}) => {
     
             console.log(post);
     
-            fetch('https://phychobuzz-server.vercel.app/posts', {
+            fetch('http://localhost:5000/posts', {
                   method: 'POST',
                   headers: {
                     'content-type': 'application/json',
