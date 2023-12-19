@@ -28,7 +28,7 @@ const AppointmentOpiton = ({ appointmentOption, setTreatment }) => {
       </div> */}
 
 <div className="card card-side bg-base-100 shadow-xl">
-  <figure><img className='w-[300px]' src={image} alt="Movie"/></figure>
+  <figure><img className='w-[250px] h-[350px]' src={image} alt="Movie"/></figure>
   <div className="card-body">
     <div className='leading-8'>
     <h2 className="text-2xl font-bold  text-secondary">{name}</h2>

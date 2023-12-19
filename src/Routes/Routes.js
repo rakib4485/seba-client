@@ -17,6 +17,10 @@ import AllUsers from "../pages/Dashobard/AllUsers/AllUsers";
 import AddDoctor from "../pages/Dashobard/AddDoctor/AddDoctor";
 import ManageDoctor from "../pages/Dashobard/ManageDoctor/ManageDoctor";
 import ServiceDetails from "../pages/Home/Services/ServiceDetails";
+import Posts from "../pages/Posts/Posts/Posts";
+import Payment from "../pages/Dashobard/Payment/Payment";
+import AllBookings from "../pages/Dashobard/AllBookings/AllBookings";
+import MyBookings from "../pages/Dashobard/MyBookings/MyBookings";
 
 export const router = createBrowserRouter([
     {
@@ -32,18 +36,22 @@ export const router = createBrowserRouter([
                 element: <Meditation/>
             },
             {
+                path: "/post",
+                element: <Posts />
+            },
+            {
                 path: "/about",
                 element: <About />
             },
-            // {
-            //     path: "/blog",
-            //     element: <Blog />
-            // },
+            {
+                path: "/blog",
+                element: <Blog />
+            },
             {
                 path: "/blogs/:id",
                 element: <PrivateRoutes><BlogDetails/></PrivateRoutes>,
                 loader: ({params}) =>{
-                    return fetch(`https://phychobuzz-server.vercel.app/blogs/${params.id}`)
+                    return fetch(`http://localhost:5000/blogs/${params.id}`)
                 }
             },
             {
@@ -77,12 +85,25 @@ export const router = createBrowserRouter([
                 element: <AllUsers/>
             },
             {
+                path: '/dashboard/myBookings',
+                element: <MyBookings/>
+            },
+            {
+                path: '/dashboard/allBookings',
+                element: <AllBookings/>
+            },
+            {
                 path: '/dashboard/adddoctors',
                 element: <AddDoctor/>
             },
             {
                 path: '/dashboard/managedoctors',
                 element: <ManageDoctor/>
+            },
+            {
+                path: '/dashboard/payment/:id',
+                element: <Payment/>,
+                loader: ({params}) => fetch(`http://localhost:5000/bookings/${params.id}`)
             },
         ]
     }

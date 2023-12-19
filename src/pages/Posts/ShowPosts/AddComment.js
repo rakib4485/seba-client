@@ -29,7 +29,7 @@ const AddComment = ({post, refetch}) => {
         }
 
         else{
-            fetch(`https://phychobuzz-server.vercel.app/posts/${_id}/comments`, {
+            fetch(`http://localhost:5000/posts/${_id}/comments`, {
             method: 'PUT',
             headers: {
                 "content-type": "application/json"

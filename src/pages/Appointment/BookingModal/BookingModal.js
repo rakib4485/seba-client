@@ -4,7 +4,7 @@ import { format } from 'date-fns';
 import { AuthContext } from '../../../contexts/AuthProvider';
 
 const BookingModal = ({ treatment, setTreatment, selectedDate, refetch }) => {
-    const { name: treatmentName, slots, price } = treatment; 
+    const { name: treatmentName, slots, price, email: doctorEmail } = treatment; 
     const date = format(selectedDate, 'PP');
     const { user } = useContext(AuthContext);
     // const navigate = useNavigate();
@@ -22,11 +22,13 @@ const BookingModal = ({ treatment, setTreatment, selectedDate, refetch }) => {
         patient: name,
         slot,
         email,
+        doctorEmail,
         phone,
-        price
+        price,
+        paid: 'false'
       }
   
-      fetch('https://phychobuzz.vercel.app/bookings', {
+      fetch('http://localhost:5000/bookings', {
         method: 'POST',
         headers: {
           'content-type': 'application/json'
