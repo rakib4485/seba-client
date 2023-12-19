@@ -27,7 +27,7 @@ const MyAppointment = () => {
     }
     return (
         <div className='mt-5 ml-5'>
-            <h1 className='text-4xl font-semibold'>My Appointment</h1>
+            <h1 className='text-4xl font-semibold'>My Appointment</h1> 
             <div className="bg-gradient-to-r from-cyan-500 to-blue-500 py-[2px] rounded-lg mb-3 w-32"></div>
             <div>
                 <div className="overflow-x-auto">
