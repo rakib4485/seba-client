@@ -35,7 +35,7 @@ const DashoardLayout = () => {
                                         <FaUserAlt className='text-[65px] ml-2 mt-4' />
                                 }
                             </div>
-                            <MdEdit className='text-center text-2xl cursor-pointer z-[50]' onClick={() => document.getElementById('image-modal').showModal()} />
+                            {/* <MdEdit className='text-center text-2xl cursor-pointer z-[50]' onClick={() => document.getElementById('image-modal').showModal()} /> */}
                         </div>
                         <h3 className={`text-lg font-semibold  text-center ${user?.displayName.length > 15 && 'tooltip'}`} data-tip={`${user?.displayName}`}>{user.displayName}</h3>
                         <p className='flex justify-center items-center mt-3 text-lg font-semibold'><span>Type : {

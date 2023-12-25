@@ -4,7 +4,7 @@ import { format } from 'date-fns';
 import { AuthContext } from '../../../contexts/AuthProvider';
 
 const BookingModal = ({ treatment, setTreatment, selectedDate, refetch }) => {
-    const { name: treatmentName, slots, price, email: doctorEmail } = treatment; 
+    const { name: treatmentName, slots, price, email: doctorEmail, meet } = treatment; 
     const date = format(selectedDate, 'PP');
     const { user } = useContext(AuthContext);
     // const navigate = useNavigate();
@@ -23,6 +23,7 @@ const BookingModal = ({ treatment, setTreatment, selectedDate, refetch }) => {
         slot,
         email,
         doctorEmail,
+        meet,
         phone,
         price,
         paid: 'false'

@@ -27,6 +27,7 @@ const AddDoctor = () => {
                         email: data.email,
                         service: 'Psychologist',
                         image: imgData.data.url,
+                        meet: data.meet,
                         slots: [
                             "08.00 AM - 08.30 AM",
                             "08.30 AM - 09.00 AM",
@@ -79,6 +80,11 @@ const AddDoctor = () => {
                         <label className="label"><span className="label-text">Email</span></label>
                         <input {...register("email", { required: "Email Address is required" })} type="text" className="input input-bordered w-full max-w-xs" />
                         {errors.email && <p className='text-red-600'>{errors.email?.message}</p>}
+                    </div>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label"><span className="label-text">Meet Link</span></label>
+                        <input {...register("meet", { required: "Meet Link is required" })} type="text" className="input input-bordered w-full max-w-xs" />
+                        {errors.meet && <p className='text-red-600'>{errors.meet?.message}</p>}
                     </div>
                     <div className="form-control w-full-max-w-xs">
                         <label className="label"><span className="label-text">Photo</span></label>
