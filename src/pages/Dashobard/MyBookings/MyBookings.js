@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../../contexts/AuthProvider';
 import { useQuery } from '@tanstack/react-query';
+import { Link } from 'react-router-dom';
 
 const MyBookings = () => {
     const {user} = useContext(AuthContext);
@@ -15,7 +16,7 @@ const MyBookings = () => {
     })
     return (
         <div className='mt-5 ml-5'>
-            <h1 className='text-4xl font-semibold'>All Patient List</h1>
+            <h1 className='text-4xl font-semibold'>My Patient List</h1>
             <div className="bg-gradient-to-r from-cyan-500 to-blue-500 py-[2px] rounded-lg mb-3 w-32"></div>
             <div>
                 <div className="overflow-x-auto">
@@ -39,12 +40,8 @@ const MyBookings = () => {
                                     <td>{booking.slot}</td>
                                     <td>{booking?.paid === 'true' ? <span className="text-primary">Paid</span> : booking.paid}</td>
                                     <td>
-                                    {/* {booking.price && booking.paid !== 'true' && (
-                                        <button className="btn btn-primary btn-sm" onClick={()=>handlePayment(booking._id)}>Confirm</button>    
-                                    )}
-                                    {booking.price && booking.paid === 'true' && (
-                                        <span className="text-primary">Paid</span>
-                                    )} */}
+                                    {/* {booking?.paid === 'true' ? <Link target='_blank' to={booking.meet} className="btn btn-primary btn-sm">join meet</Link> : booking.paid} */}
+                                    <Link target='_blank' to={booking.meet} className={`btn btn-primary btn-sm ${booking.paid === 'true' ? 'disabled': ''}`}>join meet</Link>
                                     </td>
                                 </tr>)
                             }

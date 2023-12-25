@@ -60,7 +60,7 @@ const MyAppointment = () => {
                                         <span className="text-primary">Pending</span>
                                     )}
                                     {booking.price && booking.paid === 'true' && (
-                                        <span className="text-primary">Paid</span>
+                                        <a target='_blank' href={booking.meet} className="btn btn-primary btn-sm">join meet</a>
                                     )}
                                     </td>
                                 </tr>)
