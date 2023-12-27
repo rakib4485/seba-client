@@ -14,6 +14,8 @@ const MyBookings = () => {
             return data;
         }
     })
+
+    console.log(bookings)
     return (
         <div className='mt-5 ml-5'>
             <h1 className='text-4xl font-semibold'>My Patient List</h1>
@@ -41,7 +43,7 @@ const MyBookings = () => {
                                     <td>{booking?.paid === 'true' ? <span className="text-primary">Paid</span> : booking.paid}</td>
                                     <td>
                                     {/* {booking?.paid === 'true' ? <Link target='_blank' to={booking.meet} className="btn btn-primary btn-sm">join meet</Link> : booking.paid} */}
-                                    <Link target='_blank' to={booking.meet} className={`btn btn-primary btn-sm ${booking.paid === 'true' ? 'disabled': ''}`}>join meet</Link>
+                                    <Link target='_blank' to={booking.meet} className={`btn btn-primary btn-sm `}>join meet</Link>
                                     </td>
                                 </tr>)
                             }
