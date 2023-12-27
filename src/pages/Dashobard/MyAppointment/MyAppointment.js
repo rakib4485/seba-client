@@ -21,6 +21,7 @@ const MyAppointment = () => {
             return data;
         }
     })
+    console.log(bookings)
 
     if (isLoading) {
         return <Loading />
@@ -60,7 +61,7 @@ const MyAppointment = () => {
                                         <span className="text-primary">Pending</span>
                                     )}
                                     {booking.price && booking.paid === 'true' && (
-                                        <a target='_blank' href={booking.meet} className="btn btn-primary btn-sm">join meet</a>
+                                        <Link target='_blank' to={booking.meet} className="btn btn-primary btn-sm">join meet</Link>
                                     )}
                                     </td>
                                 </tr>)
